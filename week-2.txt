@@ -1,0 +1,202 @@
+GREP COMMANDS 
+grep stands for "Global Regular Expression Print." It is a command-line utility used for searching text patterns within files or streams. grep searches for patterns in each input file and prints the lines containing the matching pattern. It is commonly used in Unix-like operating systems but is also available on other platforms, including Windows.
+
+
+
+
+grep commands                                                description                                                         example
+                                                                       
+ 
+-h                                             This command  removes the filenames from                              $ grep -h "good" file.txt
+                                               the output displaying only the matched lines. This can 
+                                               be useful when you're processing multiple files                          divya is good girl
+                                               and are only interested in the content of the lines 
+                                               that match the pattern.
+ 
+ -n                                           This command returns each line containing the                         $ grep -n "good" file.txt
+                                              word "you given" is preceded by the line number where the       
+                                               match occurred. This can be useful for quickly identifying            1:divya is good girl
+                                               the location of matches within a file, especially in large files
+                                                with many lines.
+    
+-i                                               Displays list of a filenames only.                                            $   grep -i "good" divya.txt
+                                                                                                                                                 divya is good girl
+ 
+-v                                            This prints out all the lines that do not matches                    $ grep -v "is" divya.txt
+                                                this pattern       
+                                                                                                                                             here it won't print anything becoz is 
+                                                                                                                                             line is there in divya.txt file 
+  
+  
+ -e                                          Specifies expression with this option. this prints                   $ grep -e "is" awkfile.txt
+                                               multiple lines in file where data found. the                                                                                                                                       divya is good 
+                                                                                                                                            shw is intellient
+                                                                                                                                            mom is coming tommorrow dum dum
+ 
+                                                                                                                                                                
+-o                                           When you use grep with the -o option, it will only                cat>file.txt
+                                              output the parts of each line that match the specified          divya is good girl
+                                              pattern, rather than the entire line.                                       grep -o "o" file.txt
+                                              if a line contains multiple matches, each match will be          o
+                                               printed on a separate line.                                                     o
+                                               If a line contains multiple overlapping matches, grep             (here it return is next line)
+                                               will print each match separately, without overlapping.
+                                               
+                                               
+  SED COMMAND
+  
+  The sed command, which stands for "stream editor," is a powerful text-processing tool available in Unix-like operating systems. sed operates by performing text transformations line-by-line on an input stream (a file or input from a pipe) according to a set of commands specified by the user. 
+  The sed command itself is not used to create or manage files.
+  IT IS USED TO  to perform various text manipulations like search and replace, insertions, deletions, and more.
+  
+  
+  1.This command substitutes all occurrences of intelligent  with good  in the specified file. 
+                                                           
+     BEFORE                                                                                    AFTER                                                                
+
+ divya is good                                                                  $ sed 's/intellient/good/g' awkfile.txt
+ shw is intellient                                                                divya is good  
+  mom is coming tommorrow dum dum                            shw is good
+                                                                                          mom is coming tommorrow dum dum
+                                             
+ 2.This command performs in-place editing, meaning it directly modifies the contents of the file.                       
+                                                                                                                                    
+ $ sed -i 's/intelligent/good/g' awkfile.txt
+ 
+ 3. This command deletes all lines containing the specified word or number of lines to delete.  
+      BEFORE                                                                                    AFTER                                                                
+
+ divya is good                                                                  $ sed '1,2d' awkfile.txt
+shw is intellient                                                                
+mom is coming tommorrow dum dum                            mom is coming tommorrow dum dum
+                                                                                          
+4.This command deletes all lines containing the specified words and line in the given command .                                                                                                                                                                                                                                                                            
+  
+ BEFORE                                                                              AFTER
+                                                                                           $ sed -n '1,2p' awkfile.txt
+ divya is good                                                                               
+                                                                                                       divya is good  
+shw is intellient                                                                              shw is intellient
+mom is coming tommorrow dum dum
+  
+  
+  SORT COMMAND
+ example 1: 
+  BEFORE                                                                           AFTER
+ $ cat>monthfile.txt                                                       $    sort -M monthfile.txt
+february                                                                            january
+may                                                                                  februrary  
+june                                                                                  march
+august                                                                              april
+january                                                                             may 
+march                                                                               june  
+april                                                                                  july
+july                                                                                   august   
+  
+example 2:
+  BEFORE                                                                          AFTER 
+ $ cat> numbers.txt                                                    $   sort  numbers.txt
+  1                                                                                 1
+2                                                                                   1
+3                                                                                   2
+45                                                                                 3
+1                                                                                   8
+67                                                                               45
+8                                                                                 67
+ 
+ example 3: it deletes duplicate  number from it .and provide unique data.
+ sort -u  numbers.txt
+ 1
+2
+3
+45
+67
+8
+ example 4: -r   Sorts data in reverse order (descending).
+ $ sort -r numbers.txt
+8
+67
+45
+3
+2
+1
+1 
+ example 5:    -nr  sorts a file with numeric data in reverse order. combines n and r options.
+  $ sort -nr numbers.txt
+67
+45
+8
+3
+2
+1
+1
+ 
+ example 6: -k: Sorts a table based on a specific column number.
+ BEFORE                                                                AFTER 
+ cat> numberss.txt                                              sort -k 3 numberss.txt
+1 2 3 4                                                                 1   2   3   4 
+56 90 78 92                                                         12 11 45 67
+23 56 89 12                                                         56 90  78 92
+12 11 45 67                                                         23 56 89 12
+
+example 7:-c: Checks if the file is already sorted and reports any
+disorder.
+ sort -c numberss.txt
+sort: numberss.txt:3: disorder: 23 56 89 12
+   
+   
+ CHMOD COMMAND
+ 
+ Symbolic Notation:
+u (user/owner)
+g (group)
+o (others)
+a (all)
++ (add permissions)
+- (remove permissions)
+= (set permission
+  
+  Numeric Notation:
+4 (read)
+2 (write)
+1 (execute)
+
+chmod u+x numberss.txt                                    USED TO  Add execute permission for the owner
+$ chmod go-w numberss.txt                                USED TO remove the wrie premission
+$ chmod a=rwx numberss.txt                             USED TO Set read, write, and execute permissions
+$ chmod a=w numbers.txT
+$ chmod ugo=w numbers.txt
+
+AWK COMMAND
+
+1.This command prints the second and third columns of each line in the file.
+BEFORE                                                                            AFTER
+
+divya is good                                                                  $ awk '{print $1,$3}' awkfile.txt
+shw is intellient                                                                divya good  
+mom is coming tommorrow dum dum                              shw   intellient  
+                                                                                          mom  coming
+
+
+2.Use of NR built-in variables (Display Line Number)
+ $ awk '{print NR,$3}' awkfile.txt
+1 good
+2 intellient
+3 coming
+      
+3.To count the lines in a file:
+
+ $awk '{print NR}' awkfile.txt
+1
+2
+3
+    
+ SHUT DOWN 
+ 
+ $ shutdown -H
+$shutdown -P
+$ shutdown -r now
+$ shutdown -r +5
+$ sudo shutdown 15:00
+$ sudo shutdown +10                                                                        
+  
