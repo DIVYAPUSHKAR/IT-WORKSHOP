@@ -10,29 +10,34 @@ commands of unix (user)                                            description  
                                                                      ID (UID), group ID (GID), and supplementary                               4(lxd),135(sambashare)
                                                                     group IDs. Here's a breakdown of 
                                                                     what each identifier .
-
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 2.groups                                                           which is used show the which group user                                          $ group
                                                                    belongs to it is particularly useful for checking                            Traceback (most recent call      
                                                                    the group membership of a specific user.                                       last): File "/usr/lib/command-
                                                                                                                                                    -not-found", line 28,  28, in 
  
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 3.whoami                                                          it is used to display the username of                                               $whoami
                                                                   the current user who is logged in to the system.                                  rgukt-basar
        
-                                                             
+ ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                            
 4. passwd                                                       it is used to change a user's password.                                             $  passwd
                                                                                                                                                    Chnging password for   rguktbasar.
                                                                                                                                                    Current password: 
                                                                                                                                                    New password:  
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                                                                                                                                               
                                                                                                                                               
 5.who                                                        it is used to display information about users                                           $who 
                                                               who are currently logged into the system.                                             rgukt-basar tty2        
                                                                                                                                                    2024-04-03 22:13 (tty2)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   
 6.last                                                       it  is used to display a list of recently 
                                                                logged-in users and their login history.                                             last
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                                                                 
                                                                 
 Navigating filesystems and managing directories:   
@@ -42,6 +47,7 @@ Navigating filesystems and managing directories:
 8.rmdir                                              it is used to remove files and directories.                                             rm file.txt
 9.mkdir                                             it  is used to create new directories (folders).                                     mkdir(name of folder)
 10.pwd                                                it is used to confirm current directory                                               pwd  
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Navigating filesystem and managing files and access permissions:
 
@@ -54,6 +60,7 @@ Navigating filesystem and managing files and access permissions:
 12.rm                                                           it is used to remove files and directories.                            rm file.txt
 
 13.mv                                                           it  is used to move or rename files and directories.                       mv       olddirectory                                                                                                                               newdirectory
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 14. to know the history
 history
@@ -76,14 +83,17 @@ history
  1016  java custom1
  1017  javac err2.java
  1018  java err2.....so on
- 
+ ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 15.touch: Create a new file or update its timestamp.
 rgukt-basar@divya:~$ touch file1
 rgukt-basar@divya:~$ touch file2
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 16.Print the present working directory
 rgukt-basar@divya:~$ pwd
 /home/rgukt-basar
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 17.Print the present working directory
 rgukt-basar@divya:~$ ls
@@ -96,6 +106,7 @@ rgukt-basar@divya:~$ ls
 'abc$3.class'                            'imange 2.jpg'
 'abc$4.class'                             INFO_BIN
  abc.class                                INFO_SRC
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 18.sudo: Execute a command as some other user or super-user
 rgukt-basar@divya:~$ sudo ls
@@ -113,6 +124,7 @@ rgukt-basar@divya:~$ sudo ls
  add.class
  a.out
  arraymatch.cl
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
  
  19.find: Used to search for files and directories as mentioned in the ‘expression’
  ./.cache/google-chrome/Default/Cache/Cache_Data/5787a0599a73fada_0
@@ -127,6 +139,7 @@ rgukt-basar@divya:~$ sudo ls
 ./.cache/google-chrome/Default/Cache/Cache_Data/6fda9211f6ca9d27_0
 ./.cache/google-chrome/Default/Cache/Cache_Data/26ee9f2904af3d07_0
 ./.cache/google-chrome.....
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 20.df: Show the number of free blocks for the mounted file system
 Filesystem     1K-blocks     Used Available Use% Mounted on
@@ -136,6 +149,7 @@ tmpfs            3957764        0   3957764   0% /dev/shm
 tmpfs               5120        4      5116   1% /run/lock
 /dev/nvme0n1p1    523248     5368    517880   2% /boot/efi
 tmpfs             791552      124    791428   1% /run/user/1000
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 21.cal: Displays the calendar.
 rgukt-basar@divya:~$:~$ cal
@@ -146,15 +160,18 @@ Su Mo Tu We Th Fr Sa
 14 15 16 17 18 19 20  
 21 22 23 24 25 26 27  
 28 29 30
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 22.date: Displays the system date and time.     
 rgukt-basar@divya:~$ date
 Friday 26 April 2024 12:11:12 PM IST
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 23.which: List all paths from where ‘cat’ can run  
 rgukt-basar@divya:~$ which -a cat
 /usr/bin/cat
 /bin/cat
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 24.rgukt-basar@divya:~$ ls -a
  ..
